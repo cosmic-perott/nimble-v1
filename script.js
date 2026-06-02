@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.static(__dirname));
 
-const NIMBLE_API_KEY = NIMBLE_KEY; 
+const NIMBLE_API_KEY = process.env.NIMBLE_API;
 
 const nimbleClient = axios.create({
     baseURL: 'https://sdk.nimbleway.com/v1',
