@@ -5,7 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.static(__dirname));
 
-const NIMBLE_API_KEY = NIMBLE_API; 
+const NIMBLE_API_KEY = NIMBLE_KEY; 
 
 const nimbleClient = axios.create({
     baseURL: 'https://sdk.nimbleway.com/v1',
